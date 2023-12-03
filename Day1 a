@@ -1,0 +1,14 @@
+file=open("day1a.txt","r")
+total = 0
+for line in file:
+    place = 0
+    while not line[place].isdecimal():
+        place += 1
+    number = 10*int(line[place])
+    place = len(line)-1
+    while not line[place].isdecimal():
+        place -= 1
+    number += int(line[place])
+    total += number
+print(total)
+file.close()
